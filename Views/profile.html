@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+        <script>
+            $(function () {
+                var includes = $('[data-include]')
+                $.each(includes, function () {
+                    var file = '../Views/' + $(this).data('include') + '.html'
+                    $(this).load(file)
+                })
+                })
+        </script>
+    </head>
+<div data-include="header"></div>
+<!--<?= view('sections/header') ?>-->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+             style="min-height: 600px; background-image: url(../images/mountain_bg.jpg); background-size: cover; background-position: center top;">
+            <!-- Mask -->
+            <span class="mask bg-gradient-default opacity-8"></span>
+            <!-- Header container -->
+            <div class="container-fluid d-flex align-items-center">
+                <div class="row">
+                    <div class="col-lg-7 col-md-10">
+                        <h1 class="display-2 text-white">Test</h1>
+                        <p class="text-white mt-0 mb-5">This is your profile page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page content -->
+        <div class="container-fluid mt--7">
+            <div class="row">
+                <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                    <div class="card card-profile shadow">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="card-profile-image">
+                                    <a href="#">
+                                        <img src="https://media.licdn.com/dms/image/C4E03AQH8ExpHZXIolw/profile-displayphoto-shrink_800_800/0/1616247568681?e=2147483647&v=beta&t=cv55nbvFxQPuag5ZANvrQjH3kuwXXXZx_striy-iL-g"
+                                             class="rounded-circle">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0 pt-md-4">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h3>
+                                   Test Testiogullari
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 order-xl-1">
+                    <div class="card bg-secondary shadow">
+                        <div class="card-header bg-white border-0">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+                                    <h3 class="mb-0">My account</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <h6 class="heading-small text-muted mb-4">User information</h6>
+                                <div class="pl-lg-4">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group focused">
+                                                <label class="form-control-label"
+                                                       for="profile-username">Username</label>
+                                                <h3 id="profile-username">test</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="profile-mail">Email
+                                                    address</label>
+                                                <h3 id="profile-mail">test@mail.com</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group focused">
+                                                <label class="form-control-label" for="profile-name">First name</label>
+                                                <h3 id="profile-name">Test</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group focused">
+                                                <label class="form-control-label" for="profile-surname">Last
+                                                    name</label>
+                                                <h3 id="profile-surname">Testiogullari</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Below will be the listing for books.
+                                <?=view('list_user_books',['books'=>$books,
+                                    'received_offers'=>$received_offers,
+                                    'send_offers'=>$send_offers,
+                                    'books_categories'=>$books_categories,
+                                    'books_authors'=>$books_authors]);?>
+                                -->
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
+<div data-include="footer"></div>
+<!--<?= view('sections/footer'); ?>-->

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../landing/paper.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../landing/main.css">
+
+    <script src="https://kit.fontawesome.com/8f27d68390.js"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <h1 class="logo">
+            BOOK MARKET
+        </h1>
+        <button onclick="menu()" class="menu_open"><i class="fas fa-ellipsis-v"></i></button>
+
+        <div class="m_menu" id = "m_menu">
+            <button onclick="menu()" class="menu_close">&times;</button>
+            <ul class="normal" id = "men_list">
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script> 
+        var men_list = document.getElementById("men_list");
+        var m_menu = document.getElementById("m_menu");
+        if(sessionStorage.user == 1){
+            men_list.innerHTML += '<li><a href="../Views/book_list.html">Book List</a></li>'+
+                                  '<li><a href="../Views/author_list.html">Author List</a></li>'+
+                                  '<li><a href="../Views/profile.html">Profile</a></li>'
+            
+            var cart = JSON.parse(sessionStorage.cart);
+            
+            var buy_count = 0;
+            cart.forEach(element => {
+                buy_count += element.count;
+            });
+
+            m_menu.innerHTML += '<div class="cart-box"><a href = "../Views/cart_list.html">'+ 
+                '<div class="cart-icon">'+
+                '<i class="fas fa-cart-arrow-down fa-2x" style = "font-size:1.5em"></i>'+
+                '<text>'+buy_count+'</text>'
+                '</div></div></a>'
+            
+        }
+    </script>
+</header>

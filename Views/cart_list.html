@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+        <script>
+            $(function () {
+                var includes = $('[data-include]')
+                $.each(includes, function () {
+                    var file = '/Views/' + $(this).data('include') + '.html'
+                    $(this).load(file)
+                })
+                });
+        </script>
+    </head>
+
+    <div data-include="header">
+        <button class="paper-btn margin" id = "b-btn" style = "color: blueviolet;">Satın Al</button>
+    </div>
+
+
+    <div class="container sm-12" id="cart-container">
+        <div class="row" id = "cart-row">
+        </div>
+    </div>
+
+    
+
+    <script src = "../Scripts/cart_list_scripts.js"></script>
+    <div data-include="footer"></div>
+</html>

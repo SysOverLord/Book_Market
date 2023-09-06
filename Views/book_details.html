@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+        <script>
+            $(function () {
+                var includes = $('[data-include]')
+                $.each(includes, function () {
+                    var file = '/Views/' + $(this).data('include') + '.html'
+                    $(this).load(file)
+                })
+                });
+        </script>
+        <style>
+
+        </style>
+    </head>
+<div data-include="header"></div>
+<div class="book-container">
+    <div class="row" style="display: flex;">
+        <div class="book-image  sm-3" style="width: fit-content">
+            <img id = "book-img" style="box-sizing: border-box;margin: 4%;">
+        </div>
+        <div class="book-details sm-3" style ="height: max-content; margin: 4%;">
+            <h3 class="book-title" id = "book-title">placeholder</h3>
+            <div class="text-sm" id = "book-description">placeholder</div>
+            <div class="book-offer sm-3" style="margin:20%;">
+                <div class="paper-btn" id = "buy-btn">Add to the cart.</div>
+            </div>
+        </div>
+        <div class="author sm-3" style = "box-sizing: border-box;height: fit-content; margin: 4%; float: right;">
+            <img id="author-img">
+            <h3 class="author-name" id = "author-name">placeholder</h3>
+            <div class="text-sm" id = "author-description">placeholder</div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src = "../Scripts/book_details_script.js"> 
+
+</script>
+
+<div data-include="footer"></div>
+</html>
